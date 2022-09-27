@@ -1,3 +1,4 @@
+import 'package:blog_club/common/widget/core/splash_area.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -7,7 +8,10 @@ void main() {
   setUp(() async {
     sut = MaterialApp(
       home: Scaffold(
-        body: Container(),
+        body: SplashArea(
+          child: Container(),
+          onTap: () {},
+        ),
       ),
     );
   });
@@ -15,6 +19,6 @@ void main() {
   testWidgets('just example', (tester) async {
     await tester.pumpWidget(sut);
     await tester.pump();
-    expect(find.byType(Container), findsOneWidget);
+    expect(find.byType(SplashArea), findsOneWidget);
   });
 }
