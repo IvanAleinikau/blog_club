@@ -1,29 +1,62 @@
-# This file configures the analyzer, which statically analyzes Dart code to
-# check for errors, warnings, and lints.
-#
-# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
-# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
-# invoked from the command line by running `flutter analyze`.
-
-# The following line activates a set of recommended lints for Flutter apps,
-# packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
 
-linter:
-  # The lint rules applied to this project can be customized in the
-  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
-  # included above or to enable additional rules. A list of all available lints
-  # and their documentation is published at
-  # https://dart-lang.github.io/linter/lints/index.html.
-  #
-  # Instead of disabling a lint rule for the entire project in the
-  # section below, it can also be suppressed for a single line of code
-  # or a specific dart file by using the `// ignore: name_of_lint` and
-  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
-  # producing the lint.
-  rules:
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+analyzer:
+  strong-mode:
+    implicit-dynamic: true
+    implicit-casts: true
+  exclude:
+    - '**.g.dart'
+    - '**.config.dart'
+    - '**.freezed.dart'
+    - '**.gr.dart'
+    - lib/generated/**
 
-# Additional information about this file can be found at
-# https://dart.dev/guides/language/analysis-options
+linter:
+  rules:
+    # Avoid print calls in production code.
+    avoid_print: true
+    # Use trailing commas for all function calls and declarations.
+    require_trailing_commas: true
+    # Declare method return types.
+    always_declare_return_types: true
+    # Prefer using lowerCamelCase for constant names.(LL_CAPS_WITH_UNDERSCORES if false)
+    constant_identifier_names: false
+    # Prefer declaring const constructors on @immutable classes.
+    prefer_const_constructors_in_immutables: true
+    # Use key in widget constructors.
+    use_key_in_widget_constructors: false
+    # Private field could be final.
+    prefer_final_fields: true
+    # Prefer final in for-each loop variable if reference is not reassigned.
+    prefer_final_in_for_each: true
+    # Prefer final for variable declarations if they are not reassigned.
+    prefer_final_locals: true
+    # DO avoid relative imports for files in lib/
+    always_use_package_imports: true
+    # DO avoid relative imports for files in lib/.
+    avoid_relative_lib_imports: true
+    # PREFER using const for instantiating constant constructors.
+    prefer_const_constructors: true
+    # AVOID new keyword to create instances.
+    unnecessary_new: true
+    # DO await functions that return a Future inside of an async function body.
+    unawaited_futures: true
+    # DO follow the conventions in the Effective Dart Guide
+    # DO place dart: imports before other imports.
+    directives_ordering: true
+    # DO use single quotes where they wouldn't require additional escapes.
+    prefer_single_quotes: true
+    # DON'T rename parameters of overridden methods.
+    avoid_renaming_method_parameters: false
+    # DO use a function declaration to bind a function to a name.
+    prefer_function_declarations_over_variables: false
+    # DO name source files using lowercase_with_underscores
+    file_names: false
+
+errors:
+  missing_required_param: error
+  missing_return: ignore
+  import_of_legacy_library_into_null_safe: error
+  annotate_overrides: ignore
+  invalid_annotation_target: ignore
+  missing_enum_constant_in_switch: error
