@@ -12,7 +12,7 @@ void main() {
     );
   });
 
-  testWidgets('should show correct text', (tester) async {
+  testWidgets('just example', (tester) async {
     await tester.pumpWidget(sut);
     await tester.pump();
     expect(find.byType(Container), findsOneWidget);
