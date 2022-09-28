@@ -101,192 +101,7 @@ class _AuthPageState extends State<AuthPage> {
                               child: ValueListenableBuilder(
                                 valueListenable: _isLogin,
                                 builder: (_, bool isLogin, __) {
-                                  return isLogin
-                                      ? Column(
-                                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                                          children: [
-                                            const BlogClubDivider.normalH(),
-                                            Text(
-                                              'Welcome Back',
-                                              style: BlogStyles.isonorm26ls05w700,
-                                            ),
-                                            const BlogClubDivider.normal(),
-                                            Text(
-                                              'Sing in with you account',
-                                              style: BlogStyles.subtitleAuthPage,
-                                            ),
-                                            const BlogClubDivider.normal4(),
-                                            Form(
-                                              key: FIRST_AUTH_PAGE_FORM,
-                                              onChanged: () {
-                                                //check validation
-                                              },
-                                              child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: const [
-                                                  Text(
-                                                    'Username',
-                                                    style: BlogStyles.isonorm18,
-                                                  ),
-                                                  AuthInput(
-                                                    textInputAction: TextInputAction.next,
-                                                  ),
-                                                  BlogClubDivider.normalM(),
-                                                  Text(
-                                                    'Password',
-                                                    style: BlogStyles.isonorm18,
-                                                  ),
-                                                  AuthInput(
-                                                    isPassword: true,
-                                                    textInputAction: TextInputAction.done,
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            const BlogClubDivider.normal2(),
-                                            BlogClubButton(
-                                              title: 'Login',
-                                              onTap: () {},
-                                              buttonColor: BlogColors.secondBackgroundColorAuthPage,
-                                              textStyle: BlogStyles.buttonAuthPage,
-                                            ),
-                                            const BlogClubDivider.normal2(),
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              children: [
-                                                const Text(
-                                                  'Forgot your password?',
-                                                  style: BlogStyles.isonorm18,
-                                                ),
-                                                const SizedBox(
-                                                  width: BlogDimensions.normalQ,
-                                                ),
-                                                SplashArea(
-                                                  borderRadius: BorderRadius.circular(
-                                                    BlogDimensions.smallBorderRadius,
-                                                  ),
-                                                  child: Padding(
-                                                    padding: const EdgeInsets.symmetric(
-                                                      horizontal: BlogDimensions.normalQ,
-                                                    ),
-                                                    child: Text(
-                                                      'Reset here',
-                                                      style: BlogStyles.resetHereButton,
-                                                    ),
-                                                  ),
-                                                  onTap: () {},
-                                                ),
-                                              ],
-                                            ),
-                                            const BlogClubDivider.normal2(),
-                                            Center(
-                                              child: Text(
-                                                'Or sing in with'.toUpperCase(),
-                                                style: BlogStyles.orSingInWithTitle,
-                                              ),
-                                            ),
-                                            const BlogClubDivider.normal2(),
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              children: [
-                                                AuthSocialMediaButton.google(
-                                                  onTap: () {},
-                                                ),
-                                                const BlogClubDivider.normal2(),
-                                                AuthSocialMediaButton.facebook(
-                                                  onTap: () {},
-                                                ),
-                                                const BlogClubDivider.normal2(),
-                                                AuthSocialMediaButton.twitter(
-                                                  onTap: () {},
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        )
-                                      : Column(
-                                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                                          children: [
-                                            const BlogClubDivider.normalH(),
-                                            Text(
-                                              'Welcome!',
-                                              style: BlogStyles.isonorm26ls05w700,
-                                            ),
-                                            const BlogClubDivider.normal(),
-                                            Text(
-                                              'Create your account',
-                                              style: BlogStyles.subtitleAuthPage,
-                                            ),
-                                            const BlogClubDivider.normal4(),
-                                            Form(
-                                              key: SECOND_AUTH_PAGE_FORM,
-                                              onChanged: () {
-                                                //check validation
-                                              },
-                                              child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: const [
-                                                  Text(
-                                                    'Username',
-                                                    style: BlogStyles.isonorm18,
-                                                  ),
-                                                  AuthInput(
-                                                    textInputAction: TextInputAction.next,
-                                                  ),
-                                                  BlogClubDivider.normalM(),
-                                                  Text(
-                                                    'Password',
-                                                    style: BlogStyles.isonorm18,
-                                                  ),
-                                                  AuthInput(
-                                                    isPassword: true,
-                                                    textInputAction: TextInputAction.next,
-                                                  ),
-                                                  BlogClubDivider.normalM(),
-                                                  Text(
-                                                    'Confirm password',
-                                                    style: BlogStyles.isonorm18,
-                                                  ),
-                                                  AuthInput(
-                                                    isPassword: true,
-                                                    textInputAction: TextInputAction.done,
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            const BlogClubDivider.normal2(),
-                                            BlogClubButton(
-                                              title: 'Sing up',
-                                              onTap: () {},
-                                              buttonColor: BlogColors.secondBackgroundColorAuthPage,
-                                              textStyle: BlogStyles.buttonAuthPage,
-                                            ),
-                                            const BlogClubDivider.normal2(),
-                                            Center(
-                                              child: Text(
-                                                'Or sing up with'.toUpperCase(),
-                                                style: BlogStyles.orSingInWithTitle,
-                                              ),
-                                            ),
-                                            const BlogClubDivider.normal2(),
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              children: [
-                                                AuthSocialMediaButton.google(
-                                                  onTap: () {},
-                                                ),
-                                                const BlogClubDivider.normal2(),
-                                                AuthSocialMediaButton.facebook(
-                                                  onTap: () {},
-                                                ),
-                                                const BlogClubDivider.normal2(),
-                                                AuthSocialMediaButton.twitter(
-                                                  onTap: () {},
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        );
+                                  return isLogin ? const _LoginPart() : const _RegisterPart();
                                 },
                               ),
                             ),
@@ -301,6 +116,206 @@ class _AuthPageState extends State<AuthPage> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _RegisterPart extends StatelessWidget {
+  const _RegisterPart({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        const BlogClubDivider.normalH(),
+        Text(
+          'Welcome!',
+          style: BlogStyles.isonorm26ls05w700,
+        ),
+        const BlogClubDivider.normal(),
+        Text(
+          'Create your account',
+          style: BlogStyles.subtitleAuthPage,
+        ),
+        const BlogClubDivider.normal4(),
+        Form(
+          key: SECOND_AUTH_PAGE_FORM,
+          onChanged: () {
+            //check validation
+          },
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Text(
+                'Username',
+                style: BlogStyles.isonorm18,
+              ),
+              AuthInput(
+                key: Key('EMAIL_REG'),
+                textInputAction: TextInputAction.next,
+              ),
+              BlogClubDivider.normalM(),
+              Text(
+                'Password',
+                style: BlogStyles.isonorm18,
+              ),
+              AuthInput(
+                key: Key('PASSWORD_INPUT'),
+                isPassword: true,
+                textInputAction: TextInputAction.next,
+              ),
+              BlogClubDivider.normalM(),
+              Text(
+                'Confirm password',
+                style: BlogStyles.isonorm18,
+              ),
+              AuthInput(
+                key: Key('CONFIRM_PASSWORD_INPUT'),
+                isPassword: true,
+                textInputAction: TextInputAction.done,
+              ),
+            ],
+          ),
+        ),
+        const BlogClubDivider.normal2(),
+        BlogClubButton(
+          title: 'Sing up',
+          onTap: () {},
+          buttonColor: BlogColors.secondBackgroundColorAuthPage,
+          textStyle: BlogStyles.buttonAuthPage,
+        ),
+        const BlogClubDivider.normal2(),
+        Center(
+          child: Text(
+            'Or sing up with'.toUpperCase(),
+            style: BlogStyles.orSingInWithTitle,
+          ),
+        ),
+        const BlogClubDivider.normal2(),
+        const _SocialMediaPart(),
+      ],
+    );
+  }
+}
+
+class _LoginPart extends StatelessWidget {
+  const _LoginPart({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        const BlogClubDivider.normalH(),
+        Text(
+          'Welcome Back',
+          style: BlogStyles.isonorm26ls05w700,
+        ),
+        const BlogClubDivider.normal(),
+        Text(
+          'Sing in with you account',
+          style: BlogStyles.subtitleAuthPage,
+        ),
+        const BlogClubDivider.normal4(),
+        Form(
+          key: FIRST_AUTH_PAGE_FORM,
+          onChanged: () {
+            //check validation
+          },
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Text(
+                'Username',
+                style: BlogStyles.isonorm18,
+              ),
+              AuthInput(
+                key: Key('EMAIL_LOGIN'),
+                textInputAction: TextInputAction.next,
+              ),
+              BlogClubDivider.normalM(),
+              Text(
+                'Password',
+                style: BlogStyles.isonorm18,
+              ),
+              AuthInput(
+                key: Key('PASSWORD_LOGIN'),
+                isPassword: true,
+                textInputAction: TextInputAction.done,
+              ),
+            ],
+          ),
+        ),
+        const BlogClubDivider.normal2(),
+        BlogClubButton(
+          title: 'Login',
+          onTap: () {},
+          buttonColor: BlogColors.secondBackgroundColorAuthPage,
+          textStyle: BlogStyles.buttonAuthPage,
+        ),
+        const BlogClubDivider.normal2(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Forgot your password?',
+              style: BlogStyles.isonorm18,
+            ),
+            const SizedBox(
+              width: BlogDimensions.normalQ,
+            ),
+            SplashArea(
+              borderRadius: BorderRadius.circular(
+                BlogDimensions.smallBorderRadius,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: BlogDimensions.normalQ,
+                ),
+                child: Text(
+                  'Reset here',
+                  style: BlogStyles.resetHereButton,
+                ),
+              ),
+              onTap: () {},
+            ),
+          ],
+        ),
+        const BlogClubDivider.normal2(),
+        Center(
+          child: Text(
+            'Or sing in with'.toUpperCase(),
+            style: BlogStyles.orSingInWithTitle,
+          ),
+        ),
+        const BlogClubDivider.normal2(),
+        const _SocialMediaPart(),
+      ],
+    );
+  }
+}
+
+class _SocialMediaPart extends StatelessWidget {
+  const _SocialMediaPart({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        AuthSocialMediaButton.google(
+          onTap: () {},
+        ),
+        const BlogClubDivider.normal2(),
+        AuthSocialMediaButton.facebook(
+          onTap: () {},
+        ),
+        const BlogClubDivider.normal2(),
+        AuthSocialMediaButton.twitter(
+          onTap: () {},
+        ),
+      ],
     );
   }
 }

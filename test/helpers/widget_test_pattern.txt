@@ -1,0 +1,34 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+
+import '../../helpers/widget_helpers.dart';
+
+void main() {
+  late Widget widget;
+  final completer = Completer<void>();
+
+  setUp(() {
+    widget = buildMaterialWidget();
+  });
+
+  testWidgets('should find material      widget', (tester) async {
+    await waitWidgetWithPump(tester, widget);
+    expect(find.byType(), findsOneWidget);
+  });
+
+  testWidgets('should execute callback', (tester) async {
+    await waitWidgetWithPump(tester, widget);
+    await tester.tap(find.byType());
+    expect(completer.isCompleted, true);
+  });
+
+  testWidgets('check correct size', (tester) async {
+      await waitWidgetWithPump(tester, widget);
+      final sizedBoxFinder = find.byType(SizedBox);
+      final sizedBoxWidget = tester.firstWidget<SizedBox>(sizedBoxFinder);
+      expect(sizedBoxWidget.height, BlogDimensions.normal4);
+      expect(sizedBoxWidget.width, BlogDimensions.normal4);
+  });
+}

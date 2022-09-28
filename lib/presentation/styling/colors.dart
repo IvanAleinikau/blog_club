@@ -1,3 +1,4 @@
+// coverage:ignore-file
 part of 'styling_core.dart';
 
 abstract class BlogColors {
