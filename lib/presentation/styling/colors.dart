@@ -1,3 +1,4 @@
+// coverage:ignore-file
 part of 'styling_core.dart';
 
 abstract class BlogColors {
@@ -13,6 +14,8 @@ abstract class BlogColors {
   //auth page
   static const authActiveTab = _white;
   static const authInactiveTab = Color(0xFF9E9E9E);
+  static const firstBackgroundColorAuthPage = _white;
+  static const secondBackgroundColorAuthPage = _primary700;
 
   //auth input
   static const authInputDefaultColor = _primary700;
