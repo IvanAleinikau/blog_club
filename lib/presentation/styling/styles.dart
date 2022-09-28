@@ -58,8 +58,24 @@ abstract class BlogStyles {
 
   //////////////////////////////////
 
-  //auth input
   static final suffixIconTextStyle = isonorm18.copyWith(
     color: BlogColors.authInputDefaultColor,
+  );
+
+  static final subtitleAuthPage = isonorm16.copyWith(
+    color: const Color(0xFF9E9E9E),
+  );
+
+  static final buttonAuthPage = isonorm22.copyWith(
+    color: const Color(0xFFFFFFFF),
+    letterSpacing: 1,
+  );
+
+  static final resetHereButton = isonorm18.copyWith(
+    color: const Color(0xFF1976D2),
+  );
+
+  static final orSingInWithTitle = isonorm18.copyWith(
+    color: const Color(0xFF212121),
   );
 }

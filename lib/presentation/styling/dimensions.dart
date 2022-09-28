@@ -16,6 +16,8 @@ abstract class BlogDimensions {
 
   //default padding
   static const double smallPadding = 5;
+  static const double defaultPadding = 10;
+  static const double bigPadding = 20;
 
   //default border radius
   static const double smallBorderRadius = 5;
@@ -26,6 +28,11 @@ abstract class BlogDimensions {
   static const double splashPageLogoWeight = 150;
 
   //auth page
+  static const double authPageLogoHeight = 56;
+  static const double authPageLogoWeight = 110;
+  static const double borderRadiusAuthPart = 30;
+  static const double topPaddingAuthPart = 70;
+  static const double contentPaddingAuthPart = 30;
 
   //auth input
   static const double suffixIconHeight = 50;

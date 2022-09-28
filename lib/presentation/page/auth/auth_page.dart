@@ -8,6 +8,9 @@ import 'package:blog_club/presentation/page/auth/widgets/auth_social_media_butto
 import 'package:blog_club/presentation/styling/styling_core.dart';
 import 'package:flutter/material.dart';
 
+const Key FIRST_AUTH_PAGE_FORM = Key('FIRST_AUTH_PAGE_FORM');
+const Key SECOND_AUTH_PAGE_FORM = Key('SECOND_AUTH_PAGE_FORM');
+
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);
 
@@ -21,7 +24,7 @@ class _AuthPageState extends State<AuthPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFFFFF),
+      backgroundColor: BlogColors.firstBackgroundColorAuthPage,
       body: FocusLayout(
         child: SafeArea(
           child: ListView(
@@ -33,18 +36,24 @@ class _AuthPageState extends State<AuthPage> {
                 ),
                 child: Image.asset(
                   BlogImage.appLogo,
-                  width: 110,
-                  height: 56,
+                  width: BlogDimensions.authPageLogoWeight,
+                  height: BlogDimensions.authPageLogoHeight,
                 ),
               ),
               ClipRRect(
-                borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(
+                    BlogDimensions.borderRadiusAuthPart,
+                  ),
+                ),
                 child: ColoredBox(
-                  color: Colors.blue.shade700,
+                  color: BlogColors.secondBackgroundColorAuthPage,
                   child: Stack(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 20),
+                        padding: const EdgeInsets.only(
+                          top: BlogDimensions.bigPadding,
+                        ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,15 +83,21 @@ class _AuthPageState extends State<AuthPage> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 70),
+                        padding: const EdgeInsets.only(
+                          top: BlogDimensions.topPaddingAuthPart,
+                        ),
                         child: ClipRRect(
                           borderRadius: const BorderRadius.vertical(
-                            top: Radius.circular(30),
+                            top: Radius.circular(
+                              BlogDimensions.borderRadiusAuthPart,
+                            ),
                           ),
                           child: ColoredBox(
-                            color: Colors.white,
+                            color: BlogColors.firstBackgroundColorAuthPage,
                             child: Padding(
-                              padding: const EdgeInsets.all(30),
+                              padding: const EdgeInsets.all(
+                                BlogDimensions.contentPaddingAuthPart,
+                              ),
                               child: ValueListenableBuilder(
                                 valueListenable: _isLogin,
                                 builder: (_, bool isLogin, __) {
@@ -98,11 +113,11 @@ class _AuthPageState extends State<AuthPage> {
                                             const BlogClubDivider.normal(),
                                             Text(
                                               'Sing in with you account',
-                                              style:
-                                                  BlogStyles.isonorm16.copyWith(color: Colors.grey),
+                                              style: BlogStyles.subtitleAuthPage,
                                             ),
                                             const BlogClubDivider.normal4(),
                                             Form(
+                                              key: FIRST_AUTH_PAGE_FORM,
                                               onChanged: () {
                                                 //check validation
                                               },
@@ -132,11 +147,8 @@ class _AuthPageState extends State<AuthPage> {
                                             BlogClubButton(
                                               title: 'Login',
                                               onTap: () {},
-                                              buttonColor: Colors.blue.shade700,
-                                              textStyle: BlogStyles.isonorm22.copyWith(
-                                                color: Colors.white,
-                                                letterSpacing: 1,
-                                              ),
+                                              buttonColor: BlogColors.secondBackgroundColorAuthPage,
+                                              textStyle: BlogStyles.buttonAuthPage,
                                             ),
                                             const BlogClubDivider.normal2(),
                                             Row(
@@ -150,16 +162,16 @@ class _AuthPageState extends State<AuthPage> {
                                                   width: BlogDimensions.normalQ,
                                                 ),
                                                 SplashArea(
-                                                  borderRadius: BorderRadius.circular(5),
+                                                  borderRadius: BorderRadius.circular(
+                                                    BlogDimensions.smallBorderRadius,
+                                                  ),
                                                   child: Padding(
                                                     padding: const EdgeInsets.symmetric(
-                                                      horizontal: 3,
+                                                      horizontal: BlogDimensions.normalQ,
                                                     ),
                                                     child: Text(
                                                       'Reset here',
-                                                      style: BlogStyles.isonorm18.copyWith(
-                                                        color: Colors.blue.shade700,
-                                                      ),
+                                                      style: BlogStyles.resetHereButton,
                                                     ),
                                                   ),
                                                   onTap: () {},
@@ -170,9 +182,7 @@ class _AuthPageState extends State<AuthPage> {
                                             Center(
                                               child: Text(
                                                 'Or sing in with'.toUpperCase(),
-                                                style: BlogStyles.isonorm18.copyWith(
-                                                  color: Colors.grey.shade900,
-                                                ),
+                                                style: BlogStyles.orSingInWithTitle,
                                               ),
                                             ),
                                             const BlogClubDivider.normal2(),
@@ -205,11 +215,11 @@ class _AuthPageState extends State<AuthPage> {
                                             const BlogClubDivider.normal(),
                                             Text(
                                               'Create your account',
-                                              style:
-                                                  BlogStyles.isonorm16.copyWith(color: Colors.grey),
+                                              style: BlogStyles.subtitleAuthPage,
                                             ),
                                             const BlogClubDivider.normal4(),
                                             Form(
+                                              key: SECOND_AUTH_PAGE_FORM,
                                               onChanged: () {
                                                 //check validation
                                               },
@@ -248,19 +258,14 @@ class _AuthPageState extends State<AuthPage> {
                                             BlogClubButton(
                                               title: 'Sing up',
                                               onTap: () {},
-                                              buttonColor: Colors.blue.shade700,
-                                              textStyle: BlogStyles.isonorm22.copyWith(
-                                                color: Colors.white,
-                                                letterSpacing: 1,
-                                              ),
+                                              buttonColor: BlogColors.secondBackgroundColorAuthPage,
+                                              textStyle: BlogStyles.buttonAuthPage,
                                             ),
                                             const BlogClubDivider.normal2(),
                                             Center(
                                               child: Text(
                                                 'Or sing up with'.toUpperCase(),
-                                                style: BlogStyles.isonorm18.copyWith(
-                                                  color: Colors.grey.shade900,
-                                                ),
+                                                style: BlogStyles.orSingInWithTitle,
                                               ),
                                             ),
                                             const BlogClubDivider.normal2(),
