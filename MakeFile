@@ -3,3 +3,13 @@ show-coverage:
 	lcov --remove coverage/lcov.info 'lib/*.g.dart' 'lib/*.config.dart' 'lib/*.freezed.dart' 'lib/*.gr.dart' 'lib/*.swagger.dart' 'lib/*.chopper.dart' 'lib/presentation/styling/*' 'lib/domain/model/*' 'lib/presentation/route/*' 'lib/generated/*' -o coverage/new_lcov.info
 	genhtml coverage/new_lcov.info --output=coverage
 	open coverage/index.html
+
+clean-get: clean get
+
+get:
+	flutter pub get
+
+clean:
+	flutter clean
+
+

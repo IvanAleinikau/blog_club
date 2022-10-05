@@ -1,5 +1,5 @@
 name: blog_club
-description: A new Flutter project.
+description: Mobile application for iOS/Android
 publish_to: 'none'
 
 version: 1.0.0+1
@@ -12,16 +12,37 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
 
+  # HELPERS AND SERVICES
+  logger: ^1.1.0
+  freezed_annotation: ^1.1.0
+  flutter_secure_storage: ^6.0.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # ARCHITECTURE
+  auto_route: ^3.2.4
+  bloc: ^8.1.0
+  flutter_bloc: ^8.1.1
+  get_it: ^7.2.0
+  injectable: ^1.5.3
+
+  # APP ICONS HELPER
+  flutter_launcher_icons: ^0.10.0
+  flutter_lints: ^2.0.0
+
 dev_dependencies:
-  #TESTING
   flutter_test:
     sdk: flutter
 
+  # TESTING
   mocktail: 0.3.0
+  bloc_test: 9.1.0
 
-
-
-  flutter_lints: ^2.0.0
+  # SERVICES
+  build_runner:
+  freezed: 1.1.0
+  auto_route_generator: 3.2.3
+  injectable_generator: 1.5.2
 
 
 flutter:
@@ -30,6 +51,7 @@ flutter:
   assets:
     - assets/image/
     - assets/mock/
+    - assets/launcher_icon/
 
   fonts:
     - family: Isonorm
@@ -49,3 +71,9 @@ flutter:
     - family: AppIcons
       fonts:
         - asset: assets/fonts/app_icons.ttf
+
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/launcher_icon/launcher_icon.png"
