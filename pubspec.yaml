@@ -14,6 +14,7 @@ dependencies:
 
   # HELPERS AND SERVICES
   logger: ^1.1.0
+  freezed: ^1.1.0
   freezed_annotation: ^1.1.0
   flutter_secure_storage: ^6.0.0
   hive: ^2.2.3
@@ -30,20 +31,18 @@ dependencies:
   flutter_launcher_icons: ^0.10.0
   flutter_lints: ^2.0.0
 
+  # TESTING
+  mocktail: ^0.3.0
+  bloc_test: ^9.1.0
+
+  # SERVICES
+  auto_route_generator: ^3.2.3
+  injectable_generator: ^1.5.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-  # TESTING
-  mocktail: 0.3.0
-  bloc_test: 9.1.0
-
-  # SERVICES
   build_runner:
-  freezed: 1.1.0
-  auto_route_generator: 3.2.3
-  injectable_generator: 1.5.2
-
 
 flutter:
   uses-material-design: true
