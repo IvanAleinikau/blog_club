@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "869196578485",
+    "project_id": "blog-club-1d9f2",
+    "storage_bucket": "blog-club-1d9f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869196578485:android:58039de7cc6e5d7ebb08fc",
+        "android_client_info": {
+          "package_name": "com.aleinikau.blog_club.blog_club"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869196578485-3qo8ib3jmfolqar4je8umo6msohr5mh5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh1CHNwsQUaNoqN836d87ts87aj3xeNws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "869196578485-3qo8ib3jmfolqar4je8umo6msohr5mh5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "869196578485-7d0adnsm0bulv9uq4mjvgkmi3fpirsug.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.aleinikau.blogclub.blogClub"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -46,14 +46,5 @@ app.*.map.json
 /android/app/release
 /android/app/build
 
-# Avoid committing generated Freezed files:
-*.config.dart
-*.g.dart
-*.freezed.dart
-*.gr.dart
-*.swagger.dart
-*.chopper.dart
-# /lib/generated/intl/*
-
 # Ignore coverage
 /coverage

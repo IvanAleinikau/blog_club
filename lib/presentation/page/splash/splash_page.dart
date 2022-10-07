@@ -1,24 +1,53 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:blog_club/di/getters.dart';
+import 'package:blog_club/presentation/bloc/splash/splash_cubit.dart';
+import 'package:blog_club/presentation/bloc/splash/splash_state.dart';
+import 'package:blog_club/presentation/route/router.dart';
 import 'package:blog_club/presentation/styling/styling_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SplashPage extends StatelessWidget {
+class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
 
   @override
+  State<SplashPage> createState() => _SplashPageState();
+}
+
+class _SplashPageState extends State<SplashPage> {
+  late SplashCubit _cubit;
+
+  @override
+  void initState() {
+    _cubit = splashCubit;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      color: BlogColors.splashScreenBackgroundColor,
-      child: CustomPaint(
-        painter: _SplashPainter(),
-        child: Center(
-          child: Image.asset(
-            BlogImage.appLogo,
-            height: BlogDimensions.splashPageLogoHeight,
-            width: BlogDimensions.splashPageLogoWeight,
+    return BlocListener<SplashCubit, SplashState>(
+      bloc: _cubit,
+      listener: _listener,
+      child: Container(
+        color: BlogColors.splashScreenBackgroundColor,
+        child: CustomPaint(
+          painter: _SplashPainter(),
+          child: Center(
+            child: Image.asset(
+              BlogImage.appLogo,
+              height: BlogDimensions.splashPageLogoHeight,
+              width: BlogDimensions.splashPageLogoWeight,
+            ),
           ),
         ),
       ),
     );
+  }
+
+  void _listener(BuildContext context, SplashState state) {
+    if (state.isLoaded) {
+      context.router.push(const AuthDeclarativeRoute());
+    }
   }
 }
 

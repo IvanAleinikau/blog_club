@@ -14,14 +14,12 @@ dependencies:
 
   # HELPERS AND SERVICES
   logger: ^1.1.0
-  freezed: ^1.1.0
-  freezed_annotation: ^1.1.0
   flutter_secure_storage: ^6.0.0
   hive: ^2.2.3
   hive_flutter: ^1.1.0
 
   # ARCHITECTURE
-  auto_route: ^3.2.4
+  auto_route: ^5.0.1
   bloc: ^8.1.0
   flutter_bloc: ^8.1.1
   get_it: ^7.2.0
@@ -36,17 +34,25 @@ dependencies:
   bloc_test: ^9.1.0
 
   # SERVICES
-  auto_route_generator: ^3.2.3
   injectable_generator: ^1.5.2
+  freezed_annotation: ^2.1.0
+
+  # FIREBASE
+  firebase_auth: ^3.11.1
+  firebase_core: ^1.24.0
+  cloud_firestore: ^3.5.0
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner:
+  build_runner: ^2.2.1
+  json_serializable: ^6.4.1
+  auto_route_generator: ^5.0.2
+  freezed: ^2.1.0+1
 
 flutter:
   uses-material-design: true
-  generate: true
   assets:
     - assets/image/
     - assets/mock/
