@@ -24,9 +24,8 @@ class _AuthDeclarativePageState extends State<AuthDeclarativePage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AuthenticationStatusCubit, AuthenticationStatusState>(
+    return BlocBuilder<AuthenticationStatusCubit, AuthenticationStatusState>(
       bloc: _cubit,
-      listener: (context, state) {},
       builder: (context, state) {
         return AutoRouter.declarative(
           routes: (_) {

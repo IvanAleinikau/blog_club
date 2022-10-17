@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$AuthenticationStatusState {
   bool get isAuthorised => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AuthenticationStatusStateCopyWith<AuthenticationStatusState> get copyWith =>
@@ -28,7 +29,7 @@ abstract class $AuthenticationStatusStateCopyWith<$Res> {
   factory $AuthenticationStatusStateCopyWith(AuthenticationStatusState value,
           $Res Function(AuthenticationStatusState) then) =
       _$AuthenticationStatusStateCopyWithImpl<$Res>;
-  $Res call({bool isAuthorised});
+  $Res call({bool isAuthorised, bool isLoading});
 }
 
 /// @nodoc
@@ -43,11 +44,16 @@ class _$AuthenticationStatusStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isAuthorised = freezed,
+    Object? isLoading = freezed,
   }) {
     return _then(_value.copyWith(
       isAuthorised: isAuthorised == freezed
           ? _value.isAuthorised
           : isAuthorised // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -61,7 +67,7 @@ abstract class _$$_AuthenticationStatusStateCopyWith<$Res>
           $Res Function(_$_AuthenticationStatusState) then) =
       __$$_AuthenticationStatusStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isAuthorised});
+  $Res call({bool isAuthorised, bool isLoading});
 }
 
 /// @nodoc
@@ -80,11 +86,16 @@ class __$$_AuthenticationStatusStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isAuthorised = freezed,
+    Object? isLoading = freezed,
   }) {
     return _then(_$_AuthenticationStatusState(
       isAuthorised: isAuthorised == freezed
           ? _value.isAuthorised
           : isAuthorised // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -93,15 +104,19 @@ class __$$_AuthenticationStatusStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_AuthenticationStatusState implements _AuthenticationStatusState {
-  _$_AuthenticationStatusState({this.isAuthorised = false});
+  _$_AuthenticationStatusState(
+      {this.isAuthorised = false, this.isLoading = false});
 
   @override
   @JsonKey()
   final bool isAuthorised;
+  @override
+  @JsonKey()
+  final bool isLoading;
 
   @override
   String toString() {
-    return 'AuthenticationStatusState(isAuthorised: $isAuthorised)';
+    return 'AuthenticationStatusState(isAuthorised: $isAuthorised, isLoading: $isLoading)';
   }
 
   @override
@@ -110,12 +125,15 @@ class _$_AuthenticationStatusState implements _AuthenticationStatusState {
         (other.runtimeType == runtimeType &&
             other is _$_AuthenticationStatusState &&
             const DeepCollectionEquality()
-                .equals(other.isAuthorised, isAuthorised));
+                .equals(other.isAuthorised, isAuthorised) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(isAuthorised));
+      runtimeType,
+      const DeepCollectionEquality().hash(isAuthorised),
+      const DeepCollectionEquality().hash(isLoading));
 
   @JsonKey(ignore: true)
   @override
@@ -125,11 +143,14 @@ class _$_AuthenticationStatusState implements _AuthenticationStatusState {
 }
 
 abstract class _AuthenticationStatusState implements AuthenticationStatusState {
-  factory _AuthenticationStatusState({final bool isAuthorised}) =
-      _$_AuthenticationStatusState;
+  factory _AuthenticationStatusState(
+      {final bool isAuthorised,
+      final bool isLoading}) = _$_AuthenticationStatusState;
 
   @override
   bool get isAuthorised;
+  @override
+  bool get isLoading;
   @override
   @JsonKey(ignore: true)
   _$$_AuthenticationStatusStateCopyWith<_$_AuthenticationStatusState>

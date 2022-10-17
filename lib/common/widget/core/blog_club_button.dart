@@ -1,3 +1,6 @@
+import 'package:blog_club/common/constants/app_constants.dart';
+import 'package:blog_club/common/constants/ui_constants.dart';
+import 'package:blog_club/common/widget/core/empty_widget.dart';
 import 'package:blog_club/common/widget/core/splash_area.dart';
 import 'package:blog_club/presentation/styling/styling_core.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +12,8 @@ class BlogClubButton extends StatelessWidget {
   final double? width;
   final TextStyle? textStyle;
   final Color buttonColor;
+  final bool isHaveChild;
+  final Widget child;
 
   const BlogClubButton({
     Key? key,
@@ -18,6 +23,20 @@ class BlogClubButton extends StatelessWidget {
     this.textStyle,
     required this.buttonColor,
   })  : height = BlogDimensions.blogClubButtonHeight,
+        isHaveChild = false,
+        child = const EmptyWidget(),
+        super(key: key);
+
+  const BlogClubButton.withChild({
+    Key? key,
+    this.width,
+    required this.buttonColor,
+    required this.child,
+  })  : height = BlogDimensions.blogClubButtonHeight,
+        isHaveChild = true,
+        onTap = defaultFunction,
+        title = EMPTY_STRING,
+        textStyle = const TextStyle(),
         super(key: key);
 
   @override
@@ -33,11 +52,13 @@ class BlogClubButton extends StatelessWidget {
         child: SplashArea(
           onTap: onTap,
           child: Center(
-            child: Text(
-              title,
-              style: textStyle,
-              overflow: TextOverflow.ellipsis,
-            ),
+            child: !isHaveChild
+                ? Text(
+                    title,
+                    style: textStyle,
+                    overflow: TextOverflow.ellipsis,
+                  )
+                : child,
           ),
         ),
       ),

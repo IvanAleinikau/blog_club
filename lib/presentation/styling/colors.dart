@@ -20,4 +20,7 @@ abstract class BlogColors {
   //auth input
   static const authInputDefaultColor = _primary700;
   static const authInputErrorBorderColor = _red;
+
+  //auth circle indicator
+  static const authCircleProgressIndicatorColor = _white;
 }

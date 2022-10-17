@@ -38,6 +38,10 @@ abstract class BlogDimensions {
   //auth input
   static const double suffixIconHeight = 50;
 
+  //auth circle indicator
+  static const double authCircleProgressIndicatorSize = 35;
+  static const double authCircleProgressIndicatorStrokeWidth = 3;
+
   static const double blogClubButtonHeight = 50;
   static const double socialMediaIconSize = 36;
 }

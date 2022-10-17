@@ -23,11 +23,11 @@ part 'router.gr.dart';
           page: AuthPage,
           name: 'AuthRoute',
         ),
-        CustomRoute(
-          page: HomePage,
-          name: 'HomeRoute',
-        ),
       ],
+    ),
+    CustomRoute(
+      page: HomePage,
+      name: 'HomeRoute',
     ),
   ],
 )

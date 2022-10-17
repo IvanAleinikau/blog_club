@@ -3,21 +3,28 @@ import 'dart:async';
 import 'package:blog_club/common/widget/core/splash_area.dart';
 import 'package:blog_club/presentation/styling/styling_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class AuthInput extends StatefulWidget {
   final TextEditingController? controller;
   final TextInputType? keyboardType;
   final bool isPassword;
-  final Function(String)? onChanged;
   final TextInputAction? textInputAction;
+  final FocusNode? focusNode;
+  final String? Function(String?)? validator;
+  final List<TextInputFormatter>? inputFormatters;
+  final Function(String)? onChanged;
 
   const AuthInput({
     Key? key,
     this.controller,
     this.isPassword = false,
     this.keyboardType,
-    this.onChanged,
     this.textInputAction,
+    this.focusNode,
+    this.validator,
+    this.inputFormatters,
+    this.onChanged,
   }) : super(key: key);
 
   @override
@@ -48,12 +55,16 @@ class _AuthInputState extends State<AuthInput> {
       valueListenable: _isObscure,
       builder: (_, bool isObscure, __) {
         return TextFormField(
+          onChanged: widget.onChanged,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          inputFormatters: widget.inputFormatters,
+          focusNode: widget.focusNode,
           cursorColor: BlogColors.authInputDefaultColor,
           controller: widget.controller,
           keyboardType: widget.keyboardType,
-          onChanged: widget.onChanged,
           obscureText: _isObscure.value,
           textInputAction: widget.textInputAction,
+          validator: widget.validator,
           decoration: InputDecoration(
             suffixIconConstraints: const BoxConstraints(
               maxHeight: BlogDimensions.suffixIconHeight,

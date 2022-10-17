@@ -7,5 +7,6 @@ part 'authentication_status_state.freezed.dart';
 class AuthenticationStatusState with _$AuthenticationStatusState {
   factory AuthenticationStatusState({
     @Default(false) bool isAuthorised,
+    @Default(false) bool isLoading,
   }) = _AuthenticationStatusState;
 }

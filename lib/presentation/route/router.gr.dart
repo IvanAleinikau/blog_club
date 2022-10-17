@@ -33,18 +33,18 @@ class _$AppRouter extends RootStackRouter {
         barrierDismissible: false,
       );
     },
-    AuthRoute.name: (routeData) {
-      return CustomPage<dynamic>(
-        routeData: routeData,
-        child: const AuthPage(),
-        opaque: true,
-        barrierDismissible: false,
-      );
-    },
     HomeRoute.name: (routeData) {
       return CustomPage<dynamic>(
         routeData: routeData,
         child: const HomePage(),
+        opaque: true,
+        barrierDismissible: false,
+      );
+    },
+    AuthRoute.name: (routeData) {
+      return CustomPage<dynamic>(
+        routeData: routeData,
+        child: const AuthPage(),
         opaque: true,
         barrierDismissible: false,
       );
@@ -65,13 +65,12 @@ class _$AppRouter extends RootStackRouter {
               AuthRoute.name,
               path: 'auth-page',
               parent: AuthDeclarativeRoute.name,
-            ),
-            RouteConfig(
-              HomeRoute.name,
-              path: 'home-page',
-              parent: AuthDeclarativeRoute.name,
-            ),
+            )
           ],
+        ),
+        RouteConfig(
+          HomeRoute.name,
+          path: '/home-page',
         ),
       ];
 }
@@ -102,6 +101,18 @@ class AuthDeclarativeRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [HomePage]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute()
+      : super(
+          HomeRoute.name,
+          path: '/home-page',
+        );
+
+  static const String name = 'HomeRoute';
+}
+
+/// generated route for
 /// [AuthPage]
 class AuthRoute extends PageRouteInfo<void> {
   const AuthRoute()
@@ -111,16 +122,4 @@ class AuthRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'AuthRoute';
-}
-
-/// generated route for
-/// [HomePage]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute()
-      : super(
-          HomeRoute.name,
-          path: 'home-page',
-        );
-
-  static const String name = 'HomeRoute';
 }
